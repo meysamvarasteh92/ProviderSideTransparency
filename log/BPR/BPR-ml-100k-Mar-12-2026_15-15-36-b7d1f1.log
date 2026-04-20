@@ -1,0 +1,440 @@
+Thu 12 Mar 2026 15:15:36 INFO  ['/home/mvarasteh/.conda/envs/myenv/lib/python3.10/site-packages/ipykernel_launcher.py', '--f=/run/user/1000/jupyter/runtime/kernel-v3a1dded5c64edfb95e7ab435241967ab4fd21d09e.json']
+Thu 12 Mar 2026 15:15:36 INFO  
+General Hyper Parameters:
+gpu_id = 0
+use_gpu = True
+seed = 2020
+state = INFO
+reproducibility = True
+data_path = /home/mvarasteh/.conda/envs/myenv/lib/python3.10/site-packages/recbole/config/../dataset_example/ml-100k
+checkpoint_dir = saved
+show_progress = True
+save_dataset = False
+dataset_save_path = None
+save_dataloaders = False
+dataloaders_save_path = None
+log_wandb = False
+
+Training Hyper Parameters:
+epochs = 10
+train_batch_size = 512
+learner = adam
+learning_rate = 0.001
+train_neg_sample_args = {'distribution': 'uniform', 'sample_num': 1, 'alpha': 1.0, 'dynamic': False, 'candidate_num': 0}
+eval_step = 1
+stopping_step = 10
+clip_grad_norm = None
+weight_decay = 0.0
+loss_decimal_place = 4
+
+Evaluation Hyper Parameters:
+eval_args = {'split': {'RS': [0.8, 0.1, 0.1]}, 'order': 'RO', 'group_by': 'user', 'mode': {'valid': 'full', 'test': 'full'}}
+repeatable = False
+metrics = ['Recall', 'MRR', 'NDCG', 'Hit', 'Precision']
+topk = [10]
+valid_metric = MRR@10
+valid_metric_bigger = True
+eval_batch_size = 4096
+metric_decimal_place = 4
+
+Dataset Hyper Parameters:
+field_separator = 	
+seq_separator =  
+USER_ID_FIELD = user_id
+ITEM_ID_FIELD = item_id
+RATING_FIELD = rating
+TIME_FIELD = timestamp
+seq_len = None
+LABEL_FIELD = label
+threshold = None
+NEG_PREFIX = neg_
+load_col = {'inter': ['user_id', 'item_id', 'rating', 'timestamp']}
+unload_col = None
+unused_col = None
+additional_feat_suffix = None
+rm_dup_inter = None
+val_interval = None
+filter_inter_by_user_or_item = True
+user_inter_num_interval = None
+item_inter_num_interval = None
+alias_of_user_id = None
+alias_of_item_id = None
+alias_of_entity_id = None
+alias_of_relation_id = None
+preload_weight = None
+normalize_field = None
+normalize_all = True
+ITEM_LIST_LENGTH_FIELD = item_length
+LIST_SUFFIX = _list
+MAX_ITEM_LIST_LENGTH = 50
+POSITION_FIELD = position_id
+HEAD_ENTITY_ID_FIELD = head_id
+TAIL_ENTITY_ID_FIELD = tail_id
+RELATION_ID_FIELD = relation_id
+ENTITY_ID_FIELD = entity_id
+kg_reverse_r = False
+entity_kg_num_interval = None
+relation_kg_num_interval = None
+benchmark_filename = None
+
+Other Hyper Parameters: 
+worker = 0
+wandb_project = recbole
+shuffle = True
+require_pow = False
+enable_amp = False
+enable_scaler = False
+transform = None
+embedding_size = 64
+numerical_features = []
+discretization = None
+MODEL_TYPE = ModelType.GENERAL
+MODEL_INPUT_TYPE = InputType.PAIRWISE
+eval_type = EvaluatorType.RANKING
+single_spec = True
+local_rank = 0
+device = cuda
+valid_neg_sample_args = {'distribution': 'uniform', 'sample_num': 'none'}
+test_neg_sample_args = {'distribution': 'uniform', 'sample_num': 'none'}
+
+
+Thu 12 Mar 2026 15:15:36 INFO  ml-100k
+The number of users: 944
+Average actions of users: 106.04453870625663
+The number of items: 1683
+Average actions of items: 59.45303210463734
+The number of inters: 100000
+The sparsity of the dataset: 93.70575143257098%
+Remain Fields: ['user_id', 'item_id', 'rating', 'timestamp']
+Thu 12 Mar 2026 15:15:36 INFO  [Training]: train_batch_size = [512] train_neg_sample_args: [{'distribution': 'uniform', 'sample_num': 1, 'alpha': 1.0, 'dynamic': False, 'candidate_num': 0}]
+Thu 12 Mar 2026 15:15:36 INFO  [Evaluation]: eval_batch_size = [4096] eval_args: [{'split': {'RS': [0.8, 0.1, 0.1]}, 'order': 'RO', 'group_by': 'user', 'mode': {'valid': 'full', 'test': 'full'}}]
+Thu 12 Mar 2026 15:15:36 INFO  BPR(
+  (user_embedding): Embedding(944, 64)
+  (item_embedding): Embedding(1683, 64)
+  (loss): BPRLoss()
+)
+Trainable parameters: 168128
+Thu 12 Mar 2026 15:15:36 INFO  FLOPs: 128.0
+Thu 12 Mar 2026 15:15:38 INFO  epoch 0 training [time: 0.43s, train loss: 109.4152]
+Thu 12 Mar 2026 15:15:38 INFO  epoch 0 evaluating [time: 0.70s, valid_score: 0.055900]
+Thu 12 Mar 2026 15:15:38 INFO  valid result: 
+recall@10 : 0.0159    mrr@10 : 0.0559    ndcg@10 : 0.0237    hit@10 : 0.158    precision@10 : 0.0209
+Thu 12 Mar 2026 15:15:38 INFO  Saving current: saved/BPR-Mar-12-2026_15-15-36.pth
+Thu 12 Mar 2026 15:15:39 INFO  epoch 1 training [time: 0.33s, train loss: 103.6141]
+Thu 12 Mar 2026 15:15:39 INFO  epoch 1 evaluating [time: 0.61s, valid_score: 0.247100]
+Thu 12 Mar 2026 15:15:39 INFO  valid result: 
+recall@10 : 0.0935    mrr@10 : 0.2471    ndcg@10 : 0.1232    hit@10 : 0.509    precision@10 : 0.0959
+Thu 12 Mar 2026 15:15:39 INFO  Saving current: saved/BPR-Mar-12-2026_15-15-36.pth
+Thu 12 Mar 2026 15:15:39 INFO  epoch 2 training [time: 0.33s, train loss: 74.0853]
+Thu 12 Mar 2026 15:15:40 INFO  epoch 2 evaluating [time: 0.63s, valid_score: 0.263100]
+Thu 12 Mar 2026 15:15:40 INFO  valid result: 
+recall@10 : 0.1181    mrr@10 : 0.2631    ndcg@10 : 0.1364    hit@10 : 0.5652    precision@10 : 0.1001
+Thu 12 Mar 2026 15:15:40 INFO  Saving current: saved/BPR-Mar-12-2026_15-15-36.pth
+Thu 12 Mar 2026 15:15:40 INFO  epoch 3 training [time: 0.34s, train loss: 55.9704]
+Thu 12 Mar 2026 15:15:41 INFO  epoch 3 evaluating [time: 0.60s, valid_score: 0.280900]
+Thu 12 Mar 2026 15:15:41 INFO  valid result: 
+recall@10 : 0.1268    mrr@10 : 0.2809    ndcg@10 : 0.1485    hit@10 : 0.5864    precision@10 : 0.1048
+Thu 12 Mar 2026 15:15:41 INFO  Saving current: saved/BPR-Mar-12-2026_15-15-36.pth
+Thu 12 Mar 2026 15:15:41 INFO  epoch 4 training [time: 0.34s, train loss: 50.7216]
+Thu 12 Mar 2026 15:15:42 INFO  epoch 4 evaluating [time: 0.61s, valid_score: 0.303200]
+Thu 12 Mar 2026 15:15:42 INFO  valid result: 
+recall@10 : 0.1412    mrr@10 : 0.3032    ndcg@10 : 0.1626    hit@10 : 0.6108    precision@10 : 0.1134
+Thu 12 Mar 2026 15:15:42 INFO  Saving current: saved/BPR-Mar-12-2026_15-15-36.pth
+Thu 12 Mar 2026 15:15:42 INFO  epoch 5 training [time: 0.36s, train loss: 47.0920]
+Thu 12 Mar 2026 15:17:41 INFO  [Training]: train_batch_size = [512] train_neg_sample_args: [{'distribution': 'uniform', 'sample_num': 1, 'alpha': 1.0, 'dynamic': False, 'candidate_num': 0}]
+Thu 12 Mar 2026 15:17:41 INFO  [Evaluation]: eval_batch_size = [4096] eval_args: [{'split': {'RS': [0.8, 0.1, 0.1]}, 'order': 'RO', 'group_by': 'user', 'mode': {'valid': 'full', 'test': 'full'}}]
+Thu 12 Mar 2026 15:17:42 INFO  epoch 0 training [time: 0.38s, train loss: 109.4109]
+Thu 12 Mar 2026 15:17:42 INFO  epoch 0 evaluating [time: 0.62s, valid_score: 0.043000]
+Thu 12 Mar 2026 15:17:42 INFO  valid result: 
+recall@10 : 0.0147    mrr@10 : 0.043    ndcg@10 : 0.0203    hit@10 : 0.1336    precision@10 : 0.018
+Thu 12 Mar 2026 15:17:42 INFO  Saving current: saved/BPR-Mar-12-2026_15-17-41.pth
+Thu 12 Mar 2026 15:17:43 INFO  epoch 1 training [time: 0.34s, train loss: 103.1805]
+Thu 12 Mar 2026 15:17:43 INFO  epoch 1 evaluating [time: 0.62s, valid_score: 0.252700]
+Thu 12 Mar 2026 15:17:43 INFO  valid result: 
+recall@10 : 0.0996    mrr@10 : 0.2527    ndcg@10 : 0.1297    hit@10 : 0.5228    precision@10 : 0.0984
+Thu 12 Mar 2026 15:17:43 INFO  Saving current: saved/BPR-Mar-12-2026_15-17-41.pth
+Thu 12 Mar 2026 15:17:44 INFO  epoch 2 training [time: 0.33s, train loss: 73.3895]
+Thu 12 Mar 2026 15:17:44 INFO  epoch 2 evaluating [time: 0.60s, valid_score: 0.294600]
+Thu 12 Mar 2026 15:17:44 INFO  valid result: 
+recall@10 : 0.12    mrr@10 : 0.2946    ndcg@10 : 0.1499    hit@10 : 0.5779    precision@10 : 0.104
+Thu 12 Mar 2026 15:17:44 INFO  Saving current: saved/BPR-Mar-12-2026_15-17-41.pth
+Thu 12 Mar 2026 15:17:45 INFO  epoch 3 training [time: 0.35s, train loss: 55.5615]
+Thu 12 Mar 2026 15:17:45 INFO  epoch 3 evaluating [time: 0.62s, valid_score: 0.306900]
+Thu 12 Mar 2026 15:17:45 INFO  valid result: 
+recall@10 : 0.1427    mrr@10 : 0.3069    ndcg@10 : 0.1633    hit@10 : 0.6214    precision@10 : 0.1111
+Thu 12 Mar 2026 15:17:45 INFO  Saving current: saved/BPR-Mar-12-2026_15-17-41.pth
+Thu 12 Mar 2026 15:17:46 INFO  epoch 4 training [time: 0.34s, train loss: 49.7244]
+Thu 12 Mar 2026 15:17:46 INFO  epoch 4 evaluating [time: 0.60s, valid_score: 0.334100]
+Thu 12 Mar 2026 15:17:46 INFO  valid result: 
+recall@10 : 0.1692    mrr@10 : 0.3341    ndcg@10 : 0.1829    hit@10 : 0.6723    precision@10 : 0.1229
+Thu 12 Mar 2026 15:17:46 INFO  Saving current: saved/BPR-Mar-12-2026_15-17-41.pth
+Thu 12 Mar 2026 15:18:01 INFO  [Training]: train_batch_size = [512] train_neg_sample_args: [{'distribution': 'uniform', 'sample_num': 1, 'alpha': 1.0, 'dynamic': False, 'candidate_num': 0}]
+Thu 12 Mar 2026 15:18:01 INFO  [Evaluation]: eval_batch_size = [4096] eval_args: [{'split': {'RS': [0.8, 0.1, 0.1]}, 'order': 'RO', 'group_by': 'user', 'mode': {'valid': 'full', 'test': 'full'}}]
+Thu 12 Mar 2026 15:18:01 INFO  epoch 0 training [time: 0.18s, train loss: 109.3851]
+Thu 12 Mar 2026 15:18:01 INFO  epoch 0 evaluating [time: 0.14s, valid_score: 0.069400]
+Thu 12 Mar 2026 15:18:01 INFO  valid result: 
+recall@10 : 0.0198    mrr@10 : 0.0694    ndcg@10 : 0.0293    hit@10 : 0.2004    precision@10 : 0.0262
+Thu 12 Mar 2026 15:18:01 INFO  Saving current: saved/BPR-Mar-12-2026_15-18-01.pth
+Thu 12 Mar 2026 15:18:01 INFO  epoch 1 training [time: 0.16s, train loss: 102.0051]
+Thu 12 Mar 2026 15:18:02 INFO  epoch 1 evaluating [time: 0.13s, valid_score: 0.250100]
+Thu 12 Mar 2026 15:18:02 INFO  valid result: 
+recall@10 : 0.099    mrr@10 : 0.2501    ndcg@10 : 0.1261    hit@10 : 0.5058    precision@10 : 0.0954
+Thu 12 Mar 2026 15:18:02 INFO  Saving current: saved/BPR-Mar-12-2026_15-18-01.pth
+Thu 12 Mar 2026 15:18:02 INFO  epoch 2 training [time: 0.15s, train loss: 71.7015]
+Thu 12 Mar 2026 15:18:02 INFO  epoch 2 evaluating [time: 0.13s, valid_score: 0.283300]
+Thu 12 Mar 2026 15:18:02 INFO  valid result: 
+recall@10 : 0.1209    mrr@10 : 0.2833    ndcg@10 : 0.1461    hit@10 : 0.5663    precision@10 : 0.1035
+Thu 12 Mar 2026 15:18:02 INFO  Saving current: saved/BPR-Mar-12-2026_15-18-01.pth
+Thu 12 Mar 2026 15:18:02 INFO  epoch 3 training [time: 0.15s, train loss: 55.6071]
+Thu 12 Mar 2026 15:18:02 INFO  epoch 3 evaluating [time: 0.13s, valid_score: 0.291600]
+Thu 12 Mar 2026 15:18:02 INFO  valid result: 
+recall@10 : 0.1443    mrr@10 : 0.2916    ndcg@10 : 0.1597    hit@10 : 0.6098    precision@10 : 0.1101
+Thu 12 Mar 2026 15:18:02 INFO  Saving current: saved/BPR-Mar-12-2026_15-18-01.pth
+Thu 12 Mar 2026 15:18:02 INFO  epoch 4 training [time: 0.15s, train loss: 49.9223]
+Thu 12 Mar 2026 15:18:02 INFO  epoch 4 evaluating [time: 0.13s, valid_score: 0.315400]
+Thu 12 Mar 2026 15:18:02 INFO  valid result: 
+recall@10 : 0.1569    mrr@10 : 0.3154    ndcg@10 : 0.175    hit@10 : 0.632    precision@10 : 0.1175
+Thu 12 Mar 2026 15:18:02 INFO  Saving current: saved/BPR-Mar-12-2026_15-18-01.pth
+Thu 12 Mar 2026 15:23:11 INFO  [Training]: train_batch_size = [512] train_neg_sample_args: [{'distribution': 'uniform', 'sample_num': 1, 'alpha': 1.0, 'dynamic': False, 'candidate_num': 0}]
+Thu 12 Mar 2026 15:23:11 INFO  [Evaluation]: eval_batch_size = [4096] eval_args: [{'split': {'RS': [0.8, 0.1, 0.1]}, 'order': 'RO', 'group_by': 'user', 'mode': {'valid': 'full', 'test': 'full'}}]
+Thu 12 Mar 2026 15:23:11 INFO  epoch 0 training [time: 0.18s, train loss: 109.4035]
+Thu 12 Mar 2026 15:23:12 INFO  epoch 0 evaluating [time: 0.13s, valid_score: 0.082800]
+Thu 12 Mar 2026 15:23:12 INFO  valid result: 
+recall@10 : 0.022    mrr@10 : 0.0828    ndcg@10 : 0.033    hit@10 : 0.2057    precision@10 : 0.0271
+Thu 12 Mar 2026 15:23:12 INFO  Saving current: saved/BPR-Mar-12-2026_15-23-11.pth
+Thu 12 Mar 2026 15:23:12 INFO  epoch 1 training [time: 0.18s, train loss: 103.0329]
+Thu 12 Mar 2026 15:23:12 INFO  epoch 1 evaluating [time: 0.13s, valid_score: 0.262800]
+Thu 12 Mar 2026 15:23:12 INFO  valid result: 
+recall@10 : 0.0941    mrr@10 : 0.2628    ndcg@10 : 0.1304    hit@10 : 0.5005    precision@10 : 0.0989
+Thu 12 Mar 2026 15:23:12 INFO  Saving current: saved/BPR-Mar-12-2026_15-23-11.pth
+Thu 12 Mar 2026 15:23:12 INFO  epoch 2 training [time: 0.17s, train loss: 72.8335]
+Thu 12 Mar 2026 15:23:12 INFO  epoch 2 evaluating [time: 0.13s, valid_score: 0.289100]
+Thu 12 Mar 2026 15:23:12 INFO  valid result: 
+recall@10 : 0.1218    mrr@10 : 0.2891    ndcg@10 : 0.1522    hit@10 : 0.5684    precision@10 : 0.1082
+Thu 12 Mar 2026 15:23:12 INFO  Saving current: saved/BPR-Mar-12-2026_15-23-11.pth
+Thu 12 Mar 2026 15:23:12 INFO  epoch 3 training [time: 0.17s, train loss: 56.1120]
+Thu 12 Mar 2026 15:23:13 INFO  epoch 3 evaluating [time: 0.13s, valid_score: 0.310500]
+Thu 12 Mar 2026 15:23:13 INFO  valid result: 
+recall@10 : 0.1356    mrr@10 : 0.3105    ndcg@10 : 0.164    hit@10 : 0.6161    precision@10 : 0.1128
+Thu 12 Mar 2026 15:23:13 INFO  Saving current: saved/BPR-Mar-12-2026_15-23-11.pth
+Thu 12 Mar 2026 15:23:13 INFO  epoch 4 training [time: 0.18s, train loss: 50.4626]
+Thu 12 Mar 2026 15:23:13 INFO  epoch 4 evaluating [time: 0.13s, valid_score: 0.331900]
+Thu 12 Mar 2026 15:23:13 INFO  valid result: 
+recall@10 : 0.1515    mrr@10 : 0.3319    ndcg@10 : 0.1792    hit@10 : 0.6416    precision@10 : 0.1203
+Thu 12 Mar 2026 15:23:13 INFO  Saving current: saved/BPR-Mar-12-2026_15-23-11.pth
+Thu 12 Mar 2026 15:23:40 INFO  [Training]: train_batch_size = [512] train_neg_sample_args: [{'distribution': 'uniform', 'sample_num': 1, 'alpha': 1.0, 'dynamic': False, 'candidate_num': 0}]
+Thu 12 Mar 2026 15:23:40 INFO  [Evaluation]: eval_batch_size = [4096] eval_args: [{'split': {'RS': [0.8, 0.1, 0.1]}, 'order': 'RO', 'group_by': 'user', 'mode': {'valid': 'full', 'test': 'full'}}]
+Thu 12 Mar 2026 15:23:40 INFO  epoch 0 training [time: 0.20s, train loss: 109.4358]
+Thu 12 Mar 2026 15:23:40 INFO  epoch 0 evaluating [time: 0.13s, valid_score: 0.044800]
+Thu 12 Mar 2026 15:23:40 INFO  valid result: 
+recall@10 : 0.0127    mrr@10 : 0.0448    ndcg@10 : 0.0186    hit@10 : 0.122    precision@10 : 0.016
+Thu 12 Mar 2026 15:23:40 INFO  Saving current: saved/BPR-Mar-12-2026_15-23-40.pth
+Thu 12 Mar 2026 15:23:41 INFO  epoch 1 training [time: 0.17s, train loss: 104.2464]
+Thu 12 Mar 2026 15:23:41 INFO  epoch 1 evaluating [time: 0.13s, valid_score: 0.269800]
+Thu 12 Mar 2026 15:23:41 INFO  valid result: 
+recall@10 : 0.1014    mrr@10 : 0.2698    ndcg@10 : 0.1365    hit@10 : 0.5228    precision@10 : 0.1023
+Thu 12 Mar 2026 15:23:41 INFO  Saving current: saved/BPR-Mar-12-2026_15-23-40.pth
+Thu 12 Mar 2026 15:23:41 INFO  epoch 2 training [time: 0.18s, train loss: 75.4714]
+Thu 12 Mar 2026 15:23:41 INFO  epoch 2 evaluating [time: 0.13s, valid_score: 0.326400]
+Thu 12 Mar 2026 15:23:41 INFO  valid result: 
+recall@10 : 0.1268    mrr@10 : 0.3264    ndcg@10 : 0.1635    hit@10 : 0.5822    precision@10 : 0.1131
+Thu 12 Mar 2026 15:23:41 INFO  Saving current: saved/BPR-Mar-12-2026_15-23-40.pth
+Thu 12 Mar 2026 15:23:41 INFO  epoch 3 training [time: 0.19s, train loss: 56.0162]
+Thu 12 Mar 2026 15:23:41 INFO  epoch 3 evaluating [time: 0.13s, valid_score: 0.327900]
+Thu 12 Mar 2026 15:23:41 INFO  valid result: 
+recall@10 : 0.1422    mrr@10 : 0.3279    ndcg@10 : 0.1695    hit@10 : 0.6225    precision@10 : 0.1161
+Thu 12 Mar 2026 15:23:41 INFO  Saving current: saved/BPR-Mar-12-2026_15-23-40.pth
+Thu 12 Mar 2026 15:23:42 INFO  epoch 4 training [time: 0.18s, train loss: 49.8021]
+Thu 12 Mar 2026 15:23:42 INFO  epoch 4 evaluating [time: 0.13s, valid_score: 0.347400]
+Thu 12 Mar 2026 15:23:42 INFO  valid result: 
+recall@10 : 0.1657    mrr@10 : 0.3474    ndcg@10 : 0.1867    hit@10 : 0.6713    precision@10 : 0.1275
+Thu 12 Mar 2026 15:23:42 INFO  Saving current: saved/BPR-Mar-12-2026_15-23-40.pth
+Thu 12 Mar 2026 15:26:18 INFO  [Training]: train_batch_size = [512] train_neg_sample_args: [{'distribution': 'uniform', 'sample_num': 1, 'alpha': 1.0, 'dynamic': False, 'candidate_num': 0}]
+Thu 12 Mar 2026 15:26:18 INFO  [Evaluation]: eval_batch_size = [4096] eval_args: [{'split': {'RS': [0.8, 0.1, 0.1]}, 'order': 'RO', 'group_by': 'user', 'mode': {'valid': 'full', 'test': 'full'}}]
+Thu 12 Mar 2026 15:26:18 INFO  epoch 0 training [time: 0.23s, train loss: 109.4232]
+Thu 12 Mar 2026 15:26:18 INFO  epoch 0 evaluating [time: 0.13s, valid_score: 0.060900]
+Thu 12 Mar 2026 15:26:18 INFO  valid result: 
+recall@10 : 0.0153    mrr@10 : 0.0609    ndcg@10 : 0.025    hit@10 : 0.1569    precision@10 : 0.0212
+Thu 12 Mar 2026 15:26:18 INFO  Saving current: saved/BPR-Mar-12-2026_15-26-18.pth
+Thu 12 Mar 2026 15:26:18 INFO  epoch 1 training [time: 0.22s, train loss: 103.4910]
+Thu 12 Mar 2026 15:26:18 INFO  epoch 1 evaluating [time: 0.13s, valid_score: 0.251300]
+Thu 12 Mar 2026 15:26:18 INFO  valid result: 
+recall@10 : 0.0997    mrr@10 : 0.2513    ndcg@10 : 0.1269    hit@10 : 0.5249    precision@10 : 0.0988
+Thu 12 Mar 2026 15:26:18 INFO  Saving current: saved/BPR-Mar-12-2026_15-26-18.pth
+Thu 12 Mar 2026 15:26:19 INFO  epoch 2 training [time: 0.22s, train loss: 73.8101]
+Thu 12 Mar 2026 15:26:19 INFO  epoch 2 evaluating [time: 0.13s, valid_score: 0.276700]
+Thu 12 Mar 2026 15:26:19 INFO  valid result: 
+recall@10 : 0.1227    mrr@10 : 0.2767    ndcg@10 : 0.1466    hit@10 : 0.561    precision@10 : 0.1072
+Thu 12 Mar 2026 15:26:19 INFO  Saving current: saved/BPR-Mar-12-2026_15-26-18.pth
+Thu 12 Mar 2026 15:26:19 INFO  epoch 3 training [time: 0.22s, train loss: 56.0874]
+Thu 12 Mar 2026 15:26:19 INFO  epoch 3 evaluating [time: 0.13s, valid_score: 0.302800]
+Thu 12 Mar 2026 15:26:19 INFO  valid result: 
+recall@10 : 0.1395    mrr@10 : 0.3028    ndcg@10 : 0.1617    hit@10 : 0.6129    precision@10 : 0.1117
+Thu 12 Mar 2026 15:26:19 INFO  Saving current: saved/BPR-Mar-12-2026_15-26-18.pth
+Thu 12 Mar 2026 15:26:19 INFO  epoch 4 training [time: 0.23s, train loss: 49.9790]
+Thu 12 Mar 2026 15:26:19 INFO  epoch 4 evaluating [time: 0.13s, valid_score: 0.323300]
+Thu 12 Mar 2026 15:26:19 INFO  valid result: 
+recall@10 : 0.1553    mrr@10 : 0.3233    ndcg@10 : 0.1769    hit@10 : 0.6437    precision@10 : 0.1198
+Thu 12 Mar 2026 15:26:19 INFO  Saving current: saved/BPR-Mar-12-2026_15-26-18.pth
+Thu 12 Mar 2026 15:28:30 INFO  [Training]: train_batch_size = [512] train_neg_sample_args: [{'distribution': 'uniform', 'sample_num': 1, 'alpha': 1.0, 'dynamic': False, 'candidate_num': 0}]
+Thu 12 Mar 2026 15:28:30 INFO  [Evaluation]: eval_batch_size = [4096] eval_args: [{'split': {'RS': [0.8, 0.1, 0.1]}, 'order': 'RO', 'group_by': 'user', 'mode': {'valid': 'full', 'test': 'full'}}]
+Thu 12 Mar 2026 15:28:30 INFO  epoch 0 training [time: 0.18s, train loss: 109.4322]
+Thu 12 Mar 2026 15:28:30 INFO  epoch 0 evaluating [time: 0.13s, valid_score: 0.053600]
+Thu 12 Mar 2026 15:28:30 INFO  valid result: 
+recall@10 : 0.0135    mrr@10 : 0.0536    ndcg@10 : 0.0205    hit@10 : 0.14    precision@10 : 0.017
+Thu 12 Mar 2026 15:28:30 INFO  Saving current: saved/BPR-Mar-12-2026_15-28-30.pth
+Thu 12 Mar 2026 15:28:31 INFO  epoch 1 training [time: 0.17s, train loss: 103.9512]
+Thu 12 Mar 2026 15:28:31 INFO  epoch 1 evaluating [time: 0.14s, valid_score: 0.243000]
+Thu 12 Mar 2026 15:28:31 INFO  valid result: 
+recall@10 : 0.0958    mrr@10 : 0.243    ndcg@10 : 0.1224    hit@10 : 0.5186    precision@10 : 0.0968
+Thu 12 Mar 2026 15:28:31 INFO  Saving current: saved/BPR-Mar-12-2026_15-28-30.pth
+Thu 12 Mar 2026 15:28:31 INFO  epoch 2 training [time: 0.17s, train loss: 75.0356]
+Thu 12 Mar 2026 15:28:31 INFO  epoch 2 evaluating [time: 0.13s, valid_score: 0.274700]
+Thu 12 Mar 2026 15:28:31 INFO  valid result: 
+recall@10 : 0.126    mrr@10 : 0.2747    ndcg@10 : 0.1455    hit@10 : 0.5885    precision@10 : 0.1073
+Thu 12 Mar 2026 15:28:31 INFO  Saving current: saved/BPR-Mar-12-2026_15-28-30.pth
+Thu 12 Mar 2026 15:28:31 INFO  epoch 3 training [time: 0.17s, train loss: 56.5398]
+Thu 12 Mar 2026 15:28:31 INFO  epoch 3 evaluating [time: 0.13s, valid_score: 0.297500]
+Thu 12 Mar 2026 15:28:31 INFO  valid result: 
+recall@10 : 0.1423    mrr@10 : 0.2975    ndcg@10 : 0.1612    hit@10 : 0.6151    precision@10 : 0.1126
+Thu 12 Mar 2026 15:28:31 INFO  Saving current: saved/BPR-Mar-12-2026_15-28-30.pth
+Thu 12 Mar 2026 15:28:32 INFO  epoch 4 training [time: 0.17s, train loss: 50.2029]
+Thu 12 Mar 2026 15:28:32 INFO  epoch 4 evaluating [time: 0.13s, valid_score: 0.316100]
+Thu 12 Mar 2026 15:28:32 INFO  valid result: 
+recall@10 : 0.1583    mrr@10 : 0.3161    ndcg@10 : 0.1767    hit@10 : 0.6543    precision@10 : 0.1212
+Thu 12 Mar 2026 15:28:32 INFO  Saving current: saved/BPR-Mar-12-2026_15-28-30.pth
+Thu 12 Mar 2026 15:39:45 INFO  [Training]: train_batch_size = [512] train_neg_sample_args: [{'distribution': 'uniform', 'sample_num': 1, 'alpha': 1.0, 'dynamic': False, 'candidate_num': 0}]
+Thu 12 Mar 2026 15:39:45 INFO  [Evaluation]: eval_batch_size = [4096] eval_args: [{'split': {'RS': [0.8, 0.1, 0.1]}, 'order': 'RO', 'group_by': 'user', 'mode': {'valid': 'full', 'test': 'full'}}]
+Thu 12 Mar 2026 15:39:45 INFO  epoch 0 training [time: 0.16s, train loss: 109.3745]
+Thu 12 Mar 2026 15:39:45 INFO  epoch 0 evaluating [time: 0.15s, valid_score: 0.066600]
+Thu 12 Mar 2026 15:39:45 INFO  valid result: 
+recall@10 : 0.0201    mrr@10 : 0.0666    ndcg@10 : 0.0297    hit@10 : 0.1951    precision@10 : 0.0266
+Thu 12 Mar 2026 15:39:45 INFO  Saving current: saved/BPR-Mar-12-2026_15-39-45.pth
+Thu 12 Mar 2026 15:39:46 INFO  epoch 1 training [time: 0.17s, train loss: 101.9726]
+Thu 12 Mar 2026 15:39:46 INFO  epoch 1 evaluating [time: 0.14s, valid_score: 0.275500]
+Thu 12 Mar 2026 15:39:46 INFO  valid result: 
+recall@10 : 0.1011    mrr@10 : 0.2755    ndcg@10 : 0.138    hit@10 : 0.5217    precision@10 : 0.1021
+Thu 12 Mar 2026 15:39:46 INFO  Saving current: saved/BPR-Mar-12-2026_15-39-45.pth
+Thu 12 Mar 2026 15:39:46 INFO  epoch 2 training [time: 0.15s, train loss: 71.0379]
+Thu 12 Mar 2026 15:39:46 INFO  epoch 2 evaluating [time: 0.13s, valid_score: 0.288200]
+Thu 12 Mar 2026 15:39:46 INFO  valid result: 
+recall@10 : 0.1255    mrr@10 : 0.2882    ndcg@10 : 0.1514    hit@10 : 0.5758    precision@10 : 0.1085
+Thu 12 Mar 2026 15:39:46 INFO  Saving current: saved/BPR-Mar-12-2026_15-39-45.pth
+Thu 12 Mar 2026 15:39:46 INFO  epoch 3 training [time: 0.15s, train loss: 55.7461]
+Thu 12 Mar 2026 15:39:46 INFO  epoch 3 evaluating [time: 0.13s, valid_score: 0.302900]
+Thu 12 Mar 2026 15:39:46 INFO  valid result: 
+recall@10 : 0.1373    mrr@10 : 0.3029    ndcg@10 : 0.1612    hit@10 : 0.6066    precision@10 : 0.1128
+Thu 12 Mar 2026 15:39:46 INFO  Saving current: saved/BPR-Mar-12-2026_15-39-45.pth
+Thu 12 Mar 2026 15:39:46 INFO  epoch 4 training [time: 0.14s, train loss: 50.9251]
+Thu 12 Mar 2026 15:39:47 INFO  epoch 4 evaluating [time: 0.13s, valid_score: 0.318300]
+Thu 12 Mar 2026 15:39:47 INFO  valid result: 
+recall@10 : 0.1513    mrr@10 : 0.3183    ndcg@10 : 0.1742    hit@10 : 0.6299    precision@10 : 0.1197
+Thu 12 Mar 2026 15:39:47 INFO  Saving current: saved/BPR-Mar-12-2026_15-39-45.pth
+Thu 12 Mar 2026 15:40:10 INFO  [Training]: train_batch_size = [512] train_neg_sample_args: [{'distribution': 'uniform', 'sample_num': 1, 'alpha': 1.0, 'dynamic': False, 'candidate_num': 0}]
+Thu 12 Mar 2026 15:40:10 INFO  [Evaluation]: eval_batch_size = [4096] eval_args: [{'split': {'RS': [0.8, 0.1, 0.1]}, 'order': 'RO', 'group_by': 'user', 'mode': {'valid': 'full', 'test': 'full'}}]
+Thu 12 Mar 2026 15:40:10 INFO  epoch 0 training [time: 0.15s, train loss: 109.3838]
+Thu 12 Mar 2026 15:40:10 INFO  epoch 0 evaluating [time: 0.13s, valid_score: 0.080700]
+Thu 12 Mar 2026 15:40:10 INFO  valid result: 
+recall@10 : 0.0203    mrr@10 : 0.0807    ndcg@10 : 0.0334    hit@10 : 0.2036    precision@10 : 0.0292
+Thu 12 Mar 2026 15:40:10 INFO  Saving current: saved/BPR-Mar-12-2026_15-40-10.pth
+Thu 12 Mar 2026 15:40:10 INFO  epoch 1 training [time: 0.14s, train loss: 102.5542]
+Thu 12 Mar 2026 15:40:11 INFO  epoch 1 evaluating [time: 0.13s, valid_score: 0.265600]
+Thu 12 Mar 2026 15:40:11 INFO  valid result: 
+recall@10 : 0.0984    mrr@10 : 0.2656    ndcg@10 : 0.1336    hit@10 : 0.5292    precision@10 : 0.1012
+Thu 12 Mar 2026 15:40:11 INFO  Saving current: saved/BPR-Mar-12-2026_15-40-10.pth
+Thu 12 Mar 2026 15:40:11 INFO  epoch 2 training [time: 0.14s, train loss: 73.0815]
+Thu 12 Mar 2026 15:40:11 INFO  epoch 2 evaluating [time: 0.13s, valid_score: 0.280100]
+Thu 12 Mar 2026 15:40:11 INFO  valid result: 
+recall@10 : 0.1193    mrr@10 : 0.2801    ndcg@10 : 0.1454    hit@10 : 0.5769    precision@10 : 0.1052
+Thu 12 Mar 2026 15:40:11 INFO  Saving current: saved/BPR-Mar-12-2026_15-40-10.pth
+Thu 12 Mar 2026 15:40:11 INFO  epoch 3 training [time: 0.15s, train loss: 56.2176]
+Thu 12 Mar 2026 15:40:11 INFO  epoch 3 evaluating [time: 0.13s, valid_score: 0.302800]
+Thu 12 Mar 2026 15:40:11 INFO  valid result: 
+recall@10 : 0.1353    mrr@10 : 0.3028    ndcg@10 : 0.1589    hit@10 : 0.6161    precision@10 : 0.1104
+Thu 12 Mar 2026 15:40:11 INFO  Saving current: saved/BPR-Mar-12-2026_15-40-10.pth
+Thu 12 Mar 2026 15:40:11 INFO  epoch 4 training [time: 0.14s, train loss: 50.0553]
+Thu 12 Mar 2026 15:40:11 INFO  epoch 4 evaluating [time: 0.13s, valid_score: 0.313800]
+Thu 12 Mar 2026 15:40:11 INFO  valid result: 
+recall@10 : 0.157    mrr@10 : 0.3138    ndcg@10 : 0.175    hit@10 : 0.6575    precision@10 : 0.1221
+Thu 12 Mar 2026 15:40:11 INFO  Saving current: saved/BPR-Mar-12-2026_15-40-10.pth
+Thu 12 Mar 2026 15:40:27 INFO  [Training]: train_batch_size = [512] train_neg_sample_args: [{'distribution': 'uniform', 'sample_num': 1, 'alpha': 1.0, 'dynamic': False, 'candidate_num': 0}]
+Thu 12 Mar 2026 15:40:27 INFO  [Evaluation]: eval_batch_size = [4096] eval_args: [{'split': {'RS': [0.8, 0.1, 0.1]}, 'order': 'RO', 'group_by': 'user', 'mode': {'valid': 'full', 'test': 'full'}}]
+Thu 12 Mar 2026 15:40:29 INFO  epoch 0 training [time: 1.62s, train loss: 740.4316]
+Thu 12 Mar 2026 15:40:31 INFO  epoch 0 evaluating [time: 1.62s, valid_score: 0.225700]
+Thu 12 Mar 2026 15:40:31 INFO  valid result: 
+recall@10 : 0.0699    mrr@10 : 0.2257    ndcg@10 : 0.1114    hit@10 : 0.4952    precision@10 : 0.0925
+Thu 12 Mar 2026 15:40:31 INFO  Saving current: saved/BPR-Mar-12-2026_15-40-27.pth
+Thu 12 Mar 2026 15:40:32 INFO  epoch 1 training [time: 1.59s, train loss: 482.4704]
+Thu 12 Mar 2026 15:40:34 INFO  epoch 1 evaluating [time: 1.62s, valid_score: 0.271700]
+Thu 12 Mar 2026 15:40:34 INFO  valid result: 
+recall@10 : 0.0795    mrr@10 : 0.2717    ndcg@10 : 0.1329    hit@10 : 0.5394    precision@10 : 0.1074
+Thu 12 Mar 2026 15:40:34 INFO  Saving current: saved/BPR-Mar-12-2026_15-40-27.pth
+Thu 12 Mar 2026 15:40:35 INFO  epoch 2 training [time: 1.59s, train loss: 417.5682]
+Thu 12 Mar 2026 15:40:37 INFO  epoch 2 evaluating [time: 1.62s, valid_score: 0.296000]
+Thu 12 Mar 2026 15:40:37 INFO  valid result: 
+recall@10 : 0.0943    mrr@10 : 0.296    ndcg@10 : 0.1503    hit@10 : 0.5876    precision@10 : 0.1219
+Thu 12 Mar 2026 15:40:37 INFO  Saving current: saved/BPR-Mar-12-2026_15-40-27.pth
+Thu 12 Mar 2026 15:40:39 INFO  epoch 3 training [time: 1.58s, train loss: 382.4922]
+Thu 12 Mar 2026 15:40:40 INFO  epoch 3 evaluating [time: 1.62s, valid_score: 0.308300]
+Thu 12 Mar 2026 15:40:40 INFO  valid result: 
+recall@10 : 0.1017    mrr@10 : 0.3083    ndcg@10 : 0.1593    hit@10 : 0.6101    precision@10 : 0.1299
+Thu 12 Mar 2026 15:40:40 INFO  Saving current: saved/BPR-Mar-12-2026_15-40-27.pth
+Thu 12 Mar 2026 15:40:42 INFO  epoch 4 training [time: 1.58s, train loss: 356.6676]
+Thu 12 Mar 2026 15:40:44 INFO  epoch 4 evaluating [time: 1.62s, valid_score: 0.320400]
+Thu 12 Mar 2026 15:40:44 INFO  valid result: 
+recall@10 : 0.107    mrr@10 : 0.3204    ndcg@10 : 0.1668    hit@10 : 0.6318    precision@10 : 0.136
+Thu 12 Mar 2026 15:40:44 INFO  Saving current: saved/BPR-Mar-12-2026_15-40-27.pth
+Thu 12 Mar 2026 16:25:32 INFO  [Training]: train_batch_size = [512] train_neg_sample_args: [{'distribution': 'uniform', 'sample_num': 1, 'alpha': 1.0, 'dynamic': False, 'candidate_num': 0}]
+Thu 12 Mar 2026 16:25:32 INFO  [Evaluation]: eval_batch_size = [4096] eval_args: [{'split': {'RS': [0.8, 0.1, 0.1]}, 'order': 'RO', 'group_by': 'user', 'mode': {'valid': 'full', 'test': 'full'}}]
+Thu 12 Mar 2026 16:25:34 INFO  epoch 0 training [time: 2.52s, train loss: 718.9995]
+Thu 12 Mar 2026 16:25:36 INFO  epoch 0 evaluating [time: 1.63s, valid_score: 0.228200]
+Thu 12 Mar 2026 16:25:36 INFO  valid result: 
+recall@10 : 0.0695    mrr@10 : 0.2282    ndcg@10 : 0.1107    hit@10 : 0.493    precision@10 : 0.0904
+Thu 12 Mar 2026 16:25:36 INFO  Saving current: saved/BPR-Mar-12-2026_16-25-32.pth
+Thu 12 Mar 2026 16:25:39 INFO  epoch 1 training [time: 2.52s, train loss: 461.2594]
+Thu 12 Mar 2026 16:25:40 INFO  epoch 1 evaluating [time: 1.63s, valid_score: 0.278700]
+Thu 12 Mar 2026 16:25:40 INFO  valid result: 
+recall@10 : 0.0836    mrr@10 : 0.2787    ndcg@10 : 0.1369    hit@10 : 0.5601    precision@10 : 0.1102
+Thu 12 Mar 2026 16:25:40 INFO  Saving current: saved/BPR-Mar-12-2026_16-25-32.pth
+Thu 12 Mar 2026 16:25:43 INFO  epoch 2 training [time: 2.53s, train loss: 398.4028]
+Thu 12 Mar 2026 16:25:44 INFO  epoch 2 evaluating [time: 1.63s, valid_score: 0.296900]
+Thu 12 Mar 2026 16:25:44 INFO  valid result: 
+recall@10 : 0.0956    mrr@10 : 0.2969    ndcg@10 : 0.1502    hit@10 : 0.5993    precision@10 : 0.1222
+Thu 12 Mar 2026 16:25:44 INFO  Saving current: saved/BPR-Mar-12-2026_16-25-32.pth
+Thu 12 Mar 2026 16:25:47 INFO  epoch 3 training [time: 2.46s, train loss: 363.5701]
+Thu 12 Mar 2026 16:25:49 INFO  epoch 3 evaluating [time: 1.64s, valid_score: 0.312700]
+Thu 12 Mar 2026 16:25:49 INFO  valid result: 
+recall@10 : 0.1046    mrr@10 : 0.3127    ndcg@10 : 0.1606    hit@10 : 0.6207    precision@10 : 0.1304
+Thu 12 Mar 2026 16:25:49 INFO  Saving current: saved/BPR-Mar-12-2026_16-25-32.pth
+Thu 12 Mar 2026 16:25:51 INFO  epoch 4 training [time: 2.49s, train loss: 343.2160]
+Thu 12 Mar 2026 16:25:53 INFO  epoch 4 evaluating [time: 1.63s, valid_score: 0.322400]
+Thu 12 Mar 2026 16:25:53 INFO  valid result: 
+recall@10 : 0.1114    mrr@10 : 0.3224    ndcg@10 : 0.1682    hit@10 : 0.6411    precision@10 : 0.1366
+Thu 12 Mar 2026 16:25:53 INFO  Saving current: saved/BPR-Mar-12-2026_16-25-32.pth
+Thu 12 Mar 2026 16:33:08 INFO  [Training]: train_batch_size = [512] train_neg_sample_args: [{'distribution': 'uniform', 'sample_num': 1, 'alpha': 1.0, 'dynamic': False, 'candidate_num': 0}]
+Thu 12 Mar 2026 16:33:08 INFO  [Evaluation]: eval_batch_size = [4096] eval_args: [{'split': {'RS': [0.8, 0.1, 0.1]}, 'order': 'RO', 'group_by': 'user', 'mode': {'valid': 'full', 'test': 'full'}}]
+Thu 12 Mar 2026 16:33:11 INFO  epoch 0 training [time: 2.67s, train loss: 719.3282]
+Thu 12 Mar 2026 16:33:12 INFO  epoch 0 evaluating [time: 1.63s, valid_score: 0.230500]
+Thu 12 Mar 2026 16:33:12 INFO  valid result: 
+recall@10 : 0.0681    mrr@10 : 0.2305    ndcg@10 : 0.1117    hit@10 : 0.4922    precision@10 : 0.0917
+Thu 12 Mar 2026 16:33:12 INFO  Saving current: saved/BPR-Mar-12-2026_16-33-08.pth
+Thu 12 Mar 2026 16:33:15 INFO  epoch 1 training [time: 2.75s, train loss: 462.9199]
+Thu 12 Mar 2026 16:33:17 INFO  epoch 1 evaluating [time: 1.63s, valid_score: 0.267400]
+Thu 12 Mar 2026 16:33:17 INFO  valid result: 
+recall@10 : 0.0771    mrr@10 : 0.2674    ndcg@10 : 0.1297    hit@10 : 0.5303    precision@10 : 0.1051
+Thu 12 Mar 2026 16:33:17 INFO  Saving current: saved/BPR-Mar-12-2026_16-33-08.pth
+Thu 12 Mar 2026 16:33:19 INFO  epoch 2 training [time: 2.75s, train loss: 404.2480]
+Thu 12 Mar 2026 16:33:21 INFO  epoch 2 evaluating [time: 1.63s, valid_score: 0.288800]
+Thu 12 Mar 2026 16:33:21 INFO  valid result: 
+recall@10 : 0.0884    mrr@10 : 0.2888    ndcg@10 : 0.1448    hit@10 : 0.5738    precision@10 : 0.1183
+Thu 12 Mar 2026 16:33:21 INFO  Saving current: saved/BPR-Mar-12-2026_16-33-08.pth
+Thu 12 Mar 2026 16:33:24 INFO  epoch 3 training [time: 2.76s, train loss: 369.7807]
+Thu 12 Mar 2026 16:33:26 INFO  epoch 3 evaluating [time: 1.63s, valid_score: 0.310300]
+Thu 12 Mar 2026 16:33:26 INFO  valid result: 
+recall@10 : 0.0987    mrr@10 : 0.3103    ndcg@10 : 0.1582    hit@10 : 0.6053    precision@10 : 0.1288
+Thu 12 Mar 2026 16:33:26 INFO  Saving current: saved/BPR-Mar-12-2026_16-33-08.pth
+Thu 12 Mar 2026 16:33:28 INFO  epoch 4 training [time: 2.80s, train loss: 344.3375]
+Thu 12 Mar 2026 16:33:30 INFO  epoch 4 evaluating [time: 1.64s, valid_score: 0.321600]
+Thu 12 Mar 2026 16:33:30 INFO  valid result: 
+recall@10 : 0.1072    mrr@10 : 0.3216    ndcg@10 : 0.1662    hit@10 : 0.6305    precision@10 : 0.1355
+Thu 12 Mar 2026 16:33:30 INFO  Saving current: saved/BPR-Mar-12-2026_16-33-08.pth
