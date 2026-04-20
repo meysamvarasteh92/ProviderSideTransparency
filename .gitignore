@@ -2,3 +2,4 @@
 *.zip
 *.pkl
 data/
+data/LASTFM/*.csv
