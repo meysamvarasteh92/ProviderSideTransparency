@@ -29,8 +29,8 @@ This work addresses this gap by proposing a **surrogate modeling approach** to e
 | [MovieLens-1M](https://grouplens.org/datasets/movielens/1m/) | 6,040 | 3,953 | 96% |
 | [Last.fm](http://millionsongdataset.com/lastfm/) | 24,631 | 6,584 | 99% |
 
-
----
+The dataset is available on [Google Drive](https://drive.google.com/drive/folders/1EG8onsbWGUMSJAE9Ps3f5jThfluEKouX?usp=sharing). 
+Please download it and place it in the `data/` directory before running the code.---
 
 ## Features
 
