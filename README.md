@@ -61,26 +61,34 @@ We engineer features across three categories:
 ## Project Structure
 
 ```
-ProviderSideTransparency/
+provider-transparency-recsys/
 │
-├── recommender_training.ipynb        # Train NCF, VAE, and BPR recommender models
-├── recommenders_architecture.ipynb   # Model architecture definitions
-├── Fitting_regression.ipynb          # Train surrogate (XGBoost) model on ML-1M
-├── BPR-Fitting_regression.ipynb      # Train surrogate model for BPR
-├── activation.ipynb                  # Activation analysis
-├── plot.ipynb                        # Generate result figures
-├── help_functions.ipynb              # Shared utility functions
-├── TMP.ipynb                         # Scratch/experimental notebook
+├── README.md
+├── requirements.txt
+├── LICENSE
+├── .gitignore
 │
-├── data/                             # Raw datasets (not included — download separately)
-│   └── LASTFM/
-├── dataset/                          # Processed dataset files
-├── checkpoints/                      # Saved recommender model checkpoints
-├── saved/                            # Saved surrogate model outputs
-├── log/                              # Training logs
-├── log_tensorboard/                  # TensorBoard logs
+├── src/
+│   ├── models/
+│   ├── features/
+│   ├── surrogate/
+│   └── evaluation/
 │
-└── .gitignore
+├── notebooks/
+│   ├── 01_train_recommenders.ipynb
+│   ├── 02_extract_features.ipynb
+│   ├── 03_train_surrogate.ipynb
+│   └── 04_analysis.ipynb
+│
+├── configs/
+│
+├── figures/
+│   ├── exposure.png
+│   └── feature_importance.png
+│
+└── scripts/
+    ├── train.py
+    └── evaluate.py
 ```
 
 ---
